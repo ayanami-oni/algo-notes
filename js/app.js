@@ -1,4 +1,4 @@
-// ========== 构建导航树 ==========
+// ========== Build Navigation Tree ==========
 function buildNavTree() {
     const navTree = document.getElementById('navTree');
     navTree.innerHTML = '';
@@ -15,7 +15,7 @@ function buildNavTree() {
                 <span class="nav-icon">${category.icon}</span>
                 ${category.title}
             </span>
-            <span class="nav-toggle-icon">▶</span>
+            <span class="nav-toggle-icon">&#9654;</span>
         `;
 
         const childrenContainer = document.createElement('div');
@@ -32,10 +32,9 @@ function buildNavTree() {
                 e.preventDefault();
                 loadMarkdown(child.file, child.title);
                 setActiveNav(item);
-                // 移动端关闭侧边栏
+                // Close mobile sidebar
                 if (window.innerWidth <= 768) {
-                    document.getElementById('sidebar').classList.remove('open');
-                    document.querySelector('.overlay')?.classList.remove('active');
+                    closeMobileSidebar();
                 }
             });
             childrenContainer.appendChild(item);
@@ -51,13 +50,13 @@ function buildNavTree() {
     });
 }
 
-// ========== 设置当前激活项 ==========
+// ========== Set Active Navigation Item ==========
 function setActiveNav(activeItem) {
     document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
     activeItem.classList.add('active');
 }
 
-// ========== 加载 Markdown ==========
+// ========== Load Markdown Content ==========
 async function loadMarkdown(filePath, title) {
     const contentEl = document.getElementById('content');
     contentEl.innerHTML = '<div class="welcome"><p>加载中...</p></div>';
@@ -70,15 +69,15 @@ async function loadMarkdown(filePath, title) {
         const html = marked.parse(markdown);
         contentEl.innerHTML = `<div class="markdown-body">${html}</div>`;
 
-        // 代码高亮
+        // Syntax highlighting
         document.querySelectorAll('pre code').forEach(block => {
             hljs.highlightElement(block);
         });
 
-        // 更新页面标题
+        // Update page title
         document.title = `${title} - 算法学习笔记`;
 
-        // 滚动到顶部
+        // Scroll to top
         window.scrollTo(0, 0);
     } catch (err) {
         contentEl.innerHTML = `
@@ -91,12 +90,12 @@ async function loadMarkdown(filePath, title) {
     }
 }
 
-// ========== 模糊搜索 ==========
+// ========== Fuzzy Search ==========
 function initSearch() {
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
 
-    // 构建搜索索引
+    // Build search index
     const searchIndex = [];
     navData.forEach((cat, ci) => {
         cat.children.forEach((child, chi) => {
@@ -106,7 +105,6 @@ function initSearch() {
                 file: child.file,
                 catIndex: ci,
                 childIndex: chi,
-                // 用于模糊匹配的字符串
                 searchStr: (child.title + ' ' + cat.title).toLowerCase()
             });
         });
@@ -118,7 +116,6 @@ function initSearch() {
 
         let qi = 0;
         let ti = 0;
-        const highlights = [];
         const matched = [];
 
         while (qi < query.length && ti < text.length) {
@@ -131,7 +128,6 @@ function initSearch() {
 
         if (qi < query.length) return { match: false, score: 0, highlights: [] };
 
-        // 计算分数：连续匹配加分，开头匹配加分
         let score = matched.length * 10;
         for (let i = 1; i < matched.length; i++) {
             if (matched[i] === matched[i - 1] + 1) score += 5;
@@ -177,7 +173,6 @@ function initSearch() {
                 `;
             }).join('');
 
-            // 绑定点击事件
             searchResults.querySelectorAll('.search-result-item').forEach(item => {
                 item.addEventListener('click', () => {
                     const file = item.dataset.file;
@@ -187,7 +182,6 @@ function initSearch() {
 
                     loadMarkdown(file, title);
 
-                    // 展开对应分类并高亮
                     const catEl = document.querySelector(`.nav-category[data-index="${catIndex}"]`);
                     if (catEl) catEl.classList.add('expanded');
 
@@ -207,14 +201,12 @@ function initSearch() {
         performSearch(e.target.value);
     });
 
-    // 点击外部关闭搜索结果
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.search-box')) {
             searchResults.classList.remove('active');
         }
     });
 
-    // ESC 关闭
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             searchResults.classList.remove('active');
@@ -223,30 +215,57 @@ function initSearch() {
     });
 }
 
-// ========== 移动端菜单切换 ==========
-function initMobileMenu() {
+// ========== Mobile Sidebar ==========
+function initMobileSidebar() {
     const menuToggle = document.getElementById('menuToggle');
     const sidebar = document.getElementById('sidebar');
 
-    // 创建遮罩层
-    const overlay = document.createElement('div');
-    overlay.className = 'overlay';
-    document.body.appendChild(overlay);
+    // Create overlay
+    let overlay = document.querySelector('.overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'overlay';
+        document.body.appendChild(overlay);
+    }
 
-    menuToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-        overlay.classList.toggle('active');
-    });
+    function openSidebar() {
+        menuToggle.classList.add('active');
+        sidebar.classList.add('open');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 
-    overlay.addEventListener('click', () => {
+    function closeSidebar() {
+        menuToggle.classList.remove('active');
         sidebar.classList.remove('open');
         overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    menuToggle.addEventListener('click', () => {
+        if (sidebar.classList.contains('open')) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
+    });
+
+    overlay.addEventListener('click', closeSidebar);
+
+    // Expose close function globally
+    window.closeMobileSidebar = closeSidebar;
+
+    // Handle resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            closeSidebar();
+        }
     });
 }
 
-// ========== 初始化 ==========
+// ========== Initialize ==========
 document.addEventListener('DOMContentLoaded', () => {
     buildNavTree();
     initSearch();
-    initMobileMenu();
+    initMobileSidebar();
 });
