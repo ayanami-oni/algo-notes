@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>绠楁硶瀛︿範绗旇</title>
+    <title>算法学习笔记</title>
     <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-    <!-- 瀵艰埅鏍?-->
+    <!-- 导航栏 -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="./" class="nav-logo">
@@ -20,19 +20,19 @@
                 <span>AlgoNotes</span>
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="./" class="nav-link active">棣栭〉</a>
-                <a href="notes.html" class="nav-link">绠楁硶搴?/a>
-                <a href="#features" class="nav-link">鐗规€?/a>
-                <a href="#categories" class="nav-link">鍒嗙被</a>
+                <a href="./" class="nav-link active">首页</a>
+                <a href="notes.html" class="nav-link">算法库</a>
+                <a href="#features" class="nav-link">特性</a>
+                <a href="#categories" class="nav-link">分类</a>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="鑿滃崟">
+            <button class="nav-toggle" id="navToggle" aria-label="菜单">
                 <span></span>
                 <span></span>
             </button>
         </div>
     </nav>
 
-    <!-- Hero 鍖哄煙 -->
+    <!-- Hero 区域 -->
     <section class="hero">
         <div class="hero-bg">
             <div class="gradient-orb orb-1"></div>
@@ -42,16 +42,20 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-dot"></span>
-                绠楁硶绔炶禌涓庣紪绋嬪涔?            </div>
+                算法竞赛与编程学习
+            </div>
             <h1 class="hero-title">
-                <span class="title-line">绯荤粺鍖栧涔?/span>
-                <span class="title-line">绠楁硶涓庢暟鎹粨鏋?/span>
+                <span class="title-line">系统化学习</span>
+                <span class="title-line">算法与数据结构</span>
             </h1>
             <p class="hero-subtitle">
-                绮惧績鏁寸悊鐨勭畻娉曠煡璇嗗簱锛屾兜鐩栨悳绱€佸浘璁恒€佸姩鎬佽鍒掋€佸瓧绗︿覆绛夋牳蹇冮鍩熴€?                姣忕瘒绗旇閰嶆湁浠ｇ爜妯℃澘涓庡鏉傚害鍒嗘瀽锛屽姪浣犻珮鏁堝鎴樼珵璧涗笌闈㈣瘯銆?            </p>
+                精心整理的算法知识库，涵盖搜索、图论、动态规划、字符串等核心领域。
+                每篇笔记配有代码模板与复杂度分析，助你高效备战竞赛与面试。
+            </p>
             <div class="hero-actions">
                 <a href="notes.html" class="btn btn-primary">
-                    寮€濮嬫祻瑙?                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    开始浏览
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
@@ -92,12 +96,12 @@
         </div>
     </section>
 
-    <!-- 鐗规€у睍绀?-->
+    <!-- 特性展示 -->
     <section class="features" id="features">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-label">鏍稿績鐗规€?/span>
-                <h2 class="section-title">涓洪珮鏁堝涔犺€岃璁?/h2>
+                <span class="section-label">核心特性</span>
+                <h2 class="section-title">为高效学习而设计</h2>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
@@ -109,8 +113,8 @@
                             <rect x="18" y="18" width="10" height="10" rx="3" fill="currentColor" opacity="0.2"/>
                         </svg>
                     </div>
-                    <h3 class="feature-title">绯荤粺鍖栧垎绫?/h3>
-                    <p class="feature-desc">鎼滅储銆佸浘璁恒€佸姩鎬佽鍒掋€佸瓧绗︿覆銆佹暟鎹粨鏋勭瓑涓冨ぇ鍒嗙被锛岀煡璇嗕綋绯绘竻鏅板畬鏁淬€?/p>
+                    <h3 class="feature-title">系统化分类</h3>
+                    <p class="feature-desc">搜索、图论、动态规划、字符串、数据结构等七大分类，知识体系清晰完整。</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -118,8 +122,8 @@
                             <path d="M16 4v24M4 16h24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h3 class="feature-title">浠ｇ爜妯℃澘</h3>
-                    <p class="feature-desc">姣忕瘒绗旇鎻愪緵鍙洿鎺ュ鐢ㄧ殑 C++ 浠ｇ爜妯℃澘锛屾爣娉ㄥ叧閿偣鍜屾槗閿欑粏鑺傘€?/p>
+                    <h3 class="feature-title">代码模板</h3>
+                    <p class="feature-desc">每篇笔记提供可直接复用的 C++ 代码模板，标注关键点和易错细节。</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -128,8 +132,8 @@
                             <path d="M22 22l6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h3 class="feature-title">妯＄硦鎼滅储</h3>
-                    <p class="feature-desc">椤堕儴鎼滅储鏀寔妯＄硦鍖归厤锛屽揩閫熷畾浣嶇洰鏍囩畻娉曪紝鏃犻渶閫愬眰娴忚瀵艰埅銆?/p>
+                    <h3 class="feature-title">模糊搜索</h3>
+                    <p class="feature-desc">顶部搜索支持模糊匹配，快速定位目标算法，无需逐层浏览导航。</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -138,8 +142,8 @@
                             <path d="M16 10v6l4 2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h3 class="feature-title">澶嶆潅搴﹀垎鏋?/h3>
-                    <p class="feature-desc">姣忎釜绠楁硶鍧囬檮鏈夋椂闂翠笌绌洪棿澶嶆潅搴﹀垎鏋愶紝鍔╀綘鏉冭　涓嶅悓鏂规鐨勪紭鍔ｃ€?/p>
+                    <h3 class="feature-title">复杂度分析</h3>
+                    <p class="feature-desc">每个算法均附有时间与空间复杂度分析，助你权衡不同方案的优劣。</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -148,8 +152,8 @@
                             <path d="M10 10h12M10 16h8M10 22h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h3 class="feature-title">Markdown 娓叉煋</h3>
-                    <p class="feature-desc">绠楁硶绗旇浣跨敤 Markdown 缂栧啓锛屾敮鎸佸叕寮忋€佽〃鏍笺€佷唬鐮佸潡绛変赴瀵屾牸寮忋€?/p>
+                    <h3 class="feature-title">Markdown 渲染</h3>
+                    <p class="feature-desc">算法笔记使用 Markdown 编写，支持公式、表格、代码块等丰富格式。</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -158,91 +162,92 @@
                             <path d="M10 12V8a6 6 0 0112 0v4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h3 class="feature-title">鍝嶅簲寮忚璁?/h3>
-                    <p class="feature-desc">瀹岀編閫傞厤妗岄潰銆佸钩鏉垮拰鎵嬫満锛岄殢鏃堕殢鍦版煡闃呯畻娉曠煡璇嗐€?/p>
+                    <h3 class="feature-title">响应式设计</h3>
+                    <p class="feature-desc">完美适配桌面、平板和手机，随时随地查阅算法知识。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 绠楁硶鍒嗙被 -->
+    <!-- 算法分类 -->
     <section class="categories" id="categories">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-label">鐭ヨ瘑鍒嗙被</span>
-                <h2 class="section-title">涓冨ぇ鏍稿績棰嗗煙</h2>
+                <span class="section-label">知识分类</span>
+                <h2 class="section-title">七大核心领域</h2>
             </div>
             <div class="categories-grid">
                 <a href="notes.html" class="category-card">
                     <div class="category-bg" style="--hue: 210"></div>
                     <div class="category-content">
-                        <span class="category-emoji">馃攳</span>
-                        <h3>鎼滅储绠楁硶</h3>
-                        <p>DFS銆丅FS銆佷簩鍒嗘煡鎵?/p>
+                        <span class="category-emoji">🔍</span>
+                        <h3>搜索算法</h3>
+                        <p>DFS、BFS、二分查找</p>
                     </div>
                 </a>
                 <a href="notes.html" class="category-card">
                     <div class="category-bg" style="--hue: 260"></div>
                     <div class="category-content">
-                        <span class="category-emoji">馃暩锔?/span>
-                        <h3>鍥捐绠楁硶</h3>
-                        <p>鏈€鐭矾銆佹渶灏忕敓鎴愭爲銆佹嫇鎵戞帓搴?/p>
+                        <span class="category-emoji">🕸️</span>
+                        <h3>图论算法</h3>
+                        <p>最短路、最小生成树、拓扑排序</p>
                     </div>
                 </a>
                 <a href="notes.html" class="category-card">
                     <div class="category-bg" style="--hue: 30"></div>
                     <div class="category-content">
-                        <span class="category-emoji">馃搳</span>
-                        <h3>鍔ㄦ€佽鍒?/h3>
-                        <p>鑳屽寘銆丩CS銆丩IS銆佸尯闂?DP</p>
+                        <span class="category-emoji">📊</span>
+                        <h3>动态规划</h3>
+                        <p>背包、LCS、LIS、区间 DP</p>
                     </div>
                 </a>
                 <a href="notes.html" class="category-card">
                     <div class="category-bg" style="--hue: 150"></div>
                     <div class="category-content">
-                        <span class="category-emoji">馃摑</span>
-                        <h3>瀛楃涓茬畻娉?/h3>
-                        <p>KMP銆乀rie 瀛楀吀鏍?/p>
+                        <span class="category-emoji">📝</span>
+                        <h3>字符串算法</h3>
+                        <p>KMP、Trie 字典树</p>
                     </div>
                 </a>
                 <a href="notes.html" class="category-card">
                     <div class="category-bg" style="--hue: 340"></div>
                     <div class="category-content">
-                        <span class="category-emoji">馃彈锔?/span>
-                        <h3>鏁版嵁缁撴瀯</h3>
-                        <p>骞舵煡闆嗐€佺嚎娈垫爲銆佹爲鐘舵暟缁?/p>
+                        <span class="category-emoji">🏗️</span>
+                        <h3>数据结构</h3>
+                        <p>并查集、线段树、树状数组</p>
                     </div>
                 </a>
                 <a href="notes.html" class="category-card">
                     <div class="category-bg" style="--hue: 190"></div>
                     <div class="category-content">
-                        <span class="category-emoji">馃敘</span>
-                        <h3>鏁板绠楁硶</h3>
-                        <p>蹇€熷箓銆丟CD銆佺礌鏁扮瓫</p>
+                        <span class="category-emoji">🔢</span>
+                        <h3>数学算法</h3>
+                        <p>快速幂、GCD、素数筛</p>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- CTA 鍖哄煙 -->
+    <!-- CTA 区域 -->
     <section class="cta">
         <div class="cta-bg">
             <div class="gradient-orb orb-1"></div>
             <div class="gradient-orb orb-2"></div>
         </div>
         <div class="cta-content">
-            <h2>鍑嗗濂藉紑濮嬩簡鍚楋紵</h2>
-            <p>杩涘叆绠楁硶搴擄紝娴忚绮惧績鏁寸悊鐨勭瑪璁颁笌浠ｇ爜妯℃澘銆?/p>
+            <h2>准备好开始了吗？</h2>
+            <p>进入算法库，浏览精心整理的笔记与代码模板。</p>
             <a href="notes.html" class="btn btn-primary btn-large">
-                杩涘叆绠楁硶搴?                <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
+                进入算法库
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </a>
         </div>
     </section>
 
-    <!-- 椤佃剼 -->
+    <!-- 页脚 -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-main">
@@ -255,28 +260,28 @@
                     </svg>
                     <span>AlgoNotes</span>
                 </div>
-                <p class="footer-desc">绯荤粺鍖栫畻娉曞涔犵瑪璁帮紝鍔╁姏绔炶禌涓庨潰璇曘€?/p>
+                <p class="footer-desc">系统化算法学习笔记，助力竞赛与面试。</p>
             </div>
             <div class="footer-links">
                 <div class="footer-col">
-                    <h4>瀵艰埅</h4>
-                    <a href="./">棣栭〉</a>
-                    <a href="notes.html">绠楁硶搴?/a>
+                    <h4>导航</h4>
+                    <a href="./">首页</a>
+                    <a href="notes.html">算法库</a>
                 </div>
                 <div class="footer-col">
-                    <h4>鍒嗙被</h4>
-                    <a href="notes.html">鎼滅储绠楁硶</a>
-                    <a href="notes.html">鍥捐绠楁硶</a>
-                    <a href="notes.html">鍔ㄦ€佽鍒?/a>
+                    <h4>分类</h4>
+                    <a href="notes.html">搜索算法</a>
+                    <a href="notes.html">图论算法</a>
+                    <a href="notes.html">动态规划</a>
                 </div>
                 <div class="footer-col">
-                    <h4>鍏充簬</h4>
+                    <h4>关于</h4>
                     <a href="https://github.com/ayanami-oni/algo-notes" target="_blank">GitHub</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>鍩轰簬 CC BY-SA 4.0 鍗忚鍏变韩</p>
+            <p>基于 CC BY-SA 4.0 协议共享</p>
         </div>
     </footer>
 
